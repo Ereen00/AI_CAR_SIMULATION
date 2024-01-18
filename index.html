@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <title>Self-driving car - No libraries</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gösterge">
+                        
+        <div id="hız"></div>
+        <div id="mesafe" style="font-size: 20px; font-weight: bold;"></div>
+        
+        <div id="kaza_yapanlar_göstergesi"></div>
+        <div id="generasyon_sayısı"></div>
+        <div id="anlık_rekor"></div>
+        <div id="tüm_zamanların_en_iyisi"></div>
+        <div id="ortalama_kat_edilen_mesafe"></div>
+        <div id="sonraki_generasyon_barajı"></div>
+        <br>
+        <div id="seçilen_özellikler">
+            <div id="fit_in_reaction_percentage"></div>
+            <div id="detractive_fit_in_effect"></div>
+            <div id="augmentative_fit_in_effect"></div>
+            <div id="birey_sayısı"></div>
+            <div id="şerit_sayısı_göstergesi"></div>
+        </div>
+        <div id="zaman">00:00:00</div>
+    </div>
+    <div id="canvas_container">
+            <canvas id="carCanvas"></canvas>    
+    </div>
+    
+    <div id="verticalButtons">
+        <button onclick="save()">💾</button>
+        <button onclick="discard()">🗑️</button>
+    </div>
+    <canvas id="networkCanvas"></canvas>
+    <script src="visualizer.js"></script>
+    <script src="network.js"></script>
+    <script src="sensor.js"></script>
+    <script src="utils.js"></script>
+    <script src="road.js"></script>
+    <script src="controls.js"></script>
+    <script src="car.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

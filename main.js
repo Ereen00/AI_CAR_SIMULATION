@@ -12,7 +12,7 @@ const road=new Road(carCanvas.width/2,carCanvas.width*0.9);
 const augmentative_fit_in_effect = 4;
 const detractive_fit_in_effect = 3;
 
-const N=500;
+const N=50;
 const cars = generateCars(N);
 document.getElementById("birey_sayısı").innerHTML = "Generasyon başına üretilen birey sayısı: "+N;
 
@@ -180,7 +180,7 @@ window.onload = baslatDurdur;
 animate();
 
 if(parseInt(yeni_generasyon_sayısı) == 0){
-    localStorage.setItem("fit-in" , 50);
+    localStorage.setItem("fit-in" , 100);
 }
 
 let fit_in_reaction_perception = localStorage.getItem("fit-in");
@@ -198,9 +198,9 @@ function save(){
     if(-bestCar.y > ((-previous_best/100) * fit_in_reaction_perception)){
         localStorage.setItem("Previous_best" , JSON.stringify(parseInt(bestCar.y)));
         localStorage.setItem("bestBrain", JSON.stringify( bestCar.brain ));
-        //fit_in_reaction_perception += augmentative_fit_in_effect;
+        fit_in_reaction_perception += augmentative_fit_in_effect;
     }else{
-        //fit_in_reaction_perception -= detractive_fit_in_effect;
+        fit_in_reaction_perception -= detractive_fit_in_effect;
     }
     let generation_number = "g"+(parseInt(yeni_generasyon_sayısı) +1);
     soyAğacı.push(generation_number , Math.floor((100 - bestCar.y) / 15), next_generation_barrage);
